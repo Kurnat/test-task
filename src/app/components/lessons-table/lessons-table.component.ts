@@ -30,7 +30,7 @@ export class LessonsTableComponent implements OnInit {
     });
   }
 
-  public changeStatus(event: Event, hour: ISchedule): void {
+  public changeStatus(hour: ISchedule): void {
     if (hour.status === 'empty') {
       hour.status = 'free';
     }else if (hour.status === 'free')  {
