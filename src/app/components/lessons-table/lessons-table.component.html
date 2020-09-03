@@ -14,7 +14,7 @@
   <tbody>
     <tr *ngFor="let lesson of lessons;let idx = index">
       <!-- Set static hours -->
-      <th>{{ (('' + idx).length < 2) ? ('0' + idx + ':00') : (idx + ':00') }}</th>
+      <th>{{ (('' + (idx + 1)).length < 2) ? ('0' + (idx + 1) + ':00') : (idx + 1 + ':00') }}</th>
       <!-- Set dinamic lesson -->
       <td *ngFor="let hour of lesson; let day = index" (click)="changeStatus($event,hour)">
         <div [ngClass]="
