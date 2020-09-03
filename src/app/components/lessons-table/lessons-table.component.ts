@@ -39,9 +39,9 @@ export class LessonsTableComponent implements OnInit {
   }
 
   public changeStatus(hour: ISchedule): void {
-    if (!hour.status || hour.status === 'busy') {
+    if (hour.status === 'busy') {
       hour.status = 'free';
-    }else {
+    }else if (hour.status === 'free') {
       hour.status = 'busy';
     }
 
