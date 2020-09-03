@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Пн. 19 Окт.</th>
+      <th scope="col">Вт. 20 Окт.</th>
+      <th scope="col">Ср. 21 Окт.</th>
+      <th scope="col">Чт. 22 Окт.</th>
+      <th scope="col">Пн. 23 Окт.</th>
+      <th scope="col">Сб. 24 Окт.</th>
+      <th scope="col">Вс. 25 Окт.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let lesson of lessons;let idx = index">
+      <!-- Set static hours -->
+      <th>{{ (('' + idx).length < 2) ? ('0' + idx + ':00') : (idx + ':00') }}</th>
+      <!-- Set dinamic lesson -->
+      <td *ngFor="let hour of lesson; let day = index" (click)="changeStatus($event,hour)">
+        <div [ngClass]="
+      {
+        'free': hour && (hour.status === 'free'),
+        'busy': hour && (hour.status === 'busy')
+      }"></div>
+      </td>
+    </tr>
+  </tbody>
+</table>
