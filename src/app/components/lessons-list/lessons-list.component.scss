@@ -1,12 +1,14 @@
 .lessons-list{
   list-style: none;
   width: 250px;
+  padding: 0;
 }
 
 .lesson{
   padding: .3rem;
-  border: 1px dotted #ccc;
-  // background-color: #f1f1f1;
+  border: 1px dashed #666;
+  background-color: #f8f8f8;
+  margin: .3rem 0;
 }
 
 
